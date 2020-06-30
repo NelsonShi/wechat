@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="page">
+  <!--商品列表-->
+  <view class="shopList">
+      <view class="table">
+         <view class="tr">
+             <view class="th">标题1</view>
+             <view class="th">标题1</view>
+             <view class="th">标题1</view>
+             <view class="th">标题1</view>
+         </view>
+      </view>
+  </view>
+</view>

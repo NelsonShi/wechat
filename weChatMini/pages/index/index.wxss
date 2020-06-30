@@ -1,0 +1,12 @@
+/**index.wxss**/
+.mainPic {
+  display: flex;
+   width: 100%;
+   background-color: white;
+   align-items: center;
+   justify-content: center;
+}
+.introduce{
+  background-color: white;
+  padding: 20rpx;
+}

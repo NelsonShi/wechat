@@ -1,0 +1,161 @@
+/**index.wxss**/
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picDesigin {
+  display: flex;
+  height: 750rpx;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.holePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 1px solid lightgray;
+  height: 700rpx;
+  width: 700rpx;
+}
+
+.pageContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.pageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.pageRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pagePartAC {
+  background-color: rgb(201, 189, 189, 0.65);
+}
+
+.pageBD {
+  background-color: rgba(19, 241, 19, 0.65);
+}
+
+.pageEF {
+  background-color: rgb(64, 224, 208, 0.65);
+}
+
+.button-sp-area {
+  margin: 20rpx auto;
+  width: 60%;
+  background-color: white;
+}
+
+.borderDashed {
+  border: 1px dashed red;
+  background-color: rgba(153, 147, 147, 0.65);
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  width: 98vw;
+  position: relative;
+  margin:  0 1vw;
+  height: 395rpx;
+}
+
+.picCard{
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+}
+
+.picCardAdd{
+  border: 1px dashed lightgray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 98vw;
+  height: 395rpx;
+}
+
+.itemImage {
+  width: 88vw;
+  height: 395rpx;
+  z-index: 0;
+}
+
+.itemImageAdd {
+  width: 0;
+  height: 395rpx;
+  z-index: 0;
+}
+.buttonMenu{
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  background-color: rgb(203, 241, 248);
+  border-left: lightgray solid 1px;
+}
+.editButton{
+  display: flex;
+  justify-content: center;
+}
+.newPicAdd{
+  display: flex;
+  width: 98vw;
+  height: 395rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  width: auto;
+  height: 405rpx;
+}
+
+.blue {
+  background-color: lightskyblue;
+}
+
+.yellow {
+  background-color: lightgoldenrodyellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.gray {
+  background-color: lightgray;
+}
+
+.coral {
+  background-color: lightcoral;
+}
+
+.cyan {
+  background-color: lightcyan;
+}
+
+.frontPage {
+  position: absolute;
+}
+
+.dShows {
+  margin: auto;
+  background-color: black;
+  margin: 20rpx;
+}

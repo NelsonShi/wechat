@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="page">
+
+	<view>
+		<scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+			<view wx:for="{{piclist}}" wx:key="id" class="scroll-view-item_H">
+				<view wx:if='{{!item.isNew}}' class="picCard">
+					<image class="itemImage" src="{{item.host+item.path}}"></image>
+					<view class="buttonMenu">
+						<view class="iconfont icon-remove editButton" bindtap="deletePic" id='{{item.id}}'></view>
+						<view class="iconfont icon-chose editButton" bindtap="loadPicToDesgin" id='{{item.id}}'></view>
+					</view>
+				</view>
+				<view wx:else class="picCardAdd">			
+					<view class="newPicAdd">
+					  <image class="itemImageAdd"></image>
+						<view class="iconfont icon-add-big editButton" bindtap="addPicture"></view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+
+	<view class="picDesigin">
+		<canvas class="holePage" canvas-id="cutImg">
+			<cover-view class="pageBox">
+				<cover-view class="pageRow">
+					<cover-view class="pagePartAC borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none"></cover-view>
+				</cover-view>
+				<cover-view class="pageRow">
+					<cover-view class="pageBD borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-right:none"></cover-view>
+					<cover-view class="pageEF borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
+					<cover-view class="pageBD borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-left:none"></cover-view>
+				</cover-view>
+				<cover-view class="pageRow">
+					<cover-view class="pagePartAC borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none;border-top:none">
+					</cover-view>
+				</cover-view>
+				<cover-view class="pageRow">
+					<cover-view class="pageEF borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
+				</cover-view>
+			</cover-view>
+		</canvas>
+
+	</view>
+
+	<view class="button-sp-area">
+		<button type="primary" plain="true" bindtap="cutPic">3D显示</button>
+	</view>
+
+	<view class="dShows">
+		<swipertd transform_origin='center center {{boxModule.width/2}}rpx' id='swipertd'>
+			<view class="pageBox">
+				<view class="pageRow">
+					<swipertd-item side='top' my-class='item red' height='{{boxModule.width}}rpx' width='{{boxModule.length}}rpx'>
+						<image style="height:{{boxModule.width}}rpx;transform: rotateX(180deg)" src="{{pageA}}" />
+					</swipertd-item>
+				</view>
+				<view class="pageRow">
+					<swipertd-item side='left' my-class='item yellow' height='{{boxModule.height}}rpx' width='{{boxModule.width}}rpx'>
+						<image style="height:{{boxModule.height}}rpx;transform:rotateY(180deg)" src="{{pageB}}" />
+					</swipertd-item>
+					<swipertd-item side='back' my-class='item blue' height='{{boxModule.height}}rpx' width='{{boxModule.length}}rpx'>
+						<image style="height:{{boxModule.height}}rpx;transform:rotateX(180deg)" src="{{pageF}}" />
+					</swipertd-item>
+					<swipertd-item side='right' my-class='item gray' height='{{boxModule.height}}rpx' width='{{boxModule.width}}rpx'>
+						<image style="height:{{boxModule.height}}rpx;transform:rotateY(180deg)" src="{{pageD}}" />
+					</swipertd-item>
+				</view>
+				<view class="pageRow">
+					<swipertd-item side='bottom' my-class='item coral' height='{{boxModule.width}}rpx' width='{{boxModule.length}}rpx'>
+						<image style="height:{{boxModule.width}}rpx;transform:rotateX(180deg)" src="{{pageC}}" />
+					</swipertd-item>
+				</view>
+				<view class="frontPage">
+					<swipertd-item side='front' my-class='item cyan' height='{{boxModule.height}}rpx' width='{{boxModule.length}}rpx' frontZ='{{boxModule.width}}'>
+						<image style="height:{{boxModule.height}}rpx" src="{{pageE}}" />
+					</swipertd-item>
+				</view>
+			</view>
+		</swipertd>
+	</view>
+</view>

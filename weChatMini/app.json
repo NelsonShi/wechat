@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/diy/index",
+    "pages/userCenter/index",
+    "pages/index/index",
+    "pages/shopCenter/index",
+    "pages/orderHistoryTable/index",
+    "pages/order/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序帮助获取收货地址"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "wechatMini",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+        "text": "商店",
+        "pagePath": "pages/shopCenter/index",
+        "iconPath": "./images/icons/shop.png",
+        "selectedIconPath": "./images/icons/shop_selected.png"
+      },
+      {
+        "text": "主页",
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/icons/home.png",
+        "selectedIconPath": "./images/icons/home_selected.png"
+      },
+      {
+        "text": "创作",
+        "pagePath": "pages/diy/index",
+        "iconPath": "./images/icons/diy.png",
+        "selectedIconPath": "./images/icons/diy_selected.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/userCenter/index",
+        "iconPath": "./images/icons/userCenter.png",
+        "selectedIconPath": "./images/icons/userCenter_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  }
+}

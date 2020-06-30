@@ -1,0 +1,53 @@
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.stage .wrapper {
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  position: relative;
+  margin: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage .arrow {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+}
+
+.stage .arrow .image {
+  width: 60%;
+  height: 60%;
+  color: red;
+}
+
+.stage .arrow.left {
+  transform: rotate(-90deg);
+  left: 50rpx;
+}
+
+.stage .arrow.right {
+  transform: rotate(90deg);
+  right: 50rpx;
+}
+
+.stage .arrow.top {
+  transform: rotate(180deg);
+  bottom: 50rpx;
+}
+
+.stage .arrow.bottom {
+  transform: rotate(0deg);
+  top: 50rpx;
+}

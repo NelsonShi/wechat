@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swipertd": "../../components/Cube/swiper3D",
+    "swipertd-item": "../../components/Cube/swiper3D-item"
+  }
+}

@@ -1,0 +1,61 @@
+/**index.wxss**/
+.shopTitieImage {
+  height: 100%;
+  width: 100%;
+}
+.shoppingList{
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx;
+  height: 100%;
+  background-color: white;
+}
+.shopListTitle{
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  font-size: medium;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 0;
+}
+.shopCard{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  border: 1px solid lightgray;
+  border-radius: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.shopImage{
+  width: 200rpx;
+  height: 200rpx;
+}
+.shopCardText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: small;
+  color: rgb(206, 199, 199);
+  margin: 0,30rpx;
+}
+.shopAddButtonImage{
+  width: 80rpx;
+  height: 80rpx;
+}
+.shopAddButton{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 0 30rpx;
+}
+.commodityName{
+  margin: 10rpx 0 10rpx -70rpx;
+  color: rgb(73, 185, 250);
+  font-size: medium;
+}
+.commodityPrice{
+  margin:10rpx 0 10rpx -70rpx;
+}
+

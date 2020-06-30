@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="page">
+	<view class="personCard">
+		<view class="userinfo">
+			<!-- <image class="userinfo-avatar " src="../../images/unLogin.png" mode="cover"></image> -->
+			<block wx:if="{{!hasUserInfo && canIUse}}">
+				<view class="userImage">
+					<view class="iconfont icon-login-user"></view>
+				</view>
+				<button class="loginButton" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+					<text>点击登录</text>
+				</button>
+			</block>
+			<block wx:else>
+				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+			</block>
+		</view>
+	</view>
+	<!--订单详情-->
+	<view class="histroyCard">
+		<view class="histroyCardTitle">
+			<label>我的订单</label>
+			<label bindtap="navigateToOrder"  id='5'>查看更多></label>
+		</view>
+		<view class="histroyCardContent">
+			<view class="cardItem" bindtap="navigateToOrder"  id='1'>
+				<view class="iconfont icon-pay"></view>
+				<text>待付款</text>
+			</view>
+			<view class="cardItem" bindtap="navigateToOrder"  id='2'>
+				<view class="iconfont icon-deliver"></view>
+				<text>待发货</text>
+			</view>
+			<view class="cardItem" bindtap="navigateToOrder"  id='3'>
+				<view class="iconfont icon-receipt"></view>
+				<text>待收货</text>
+			</view>
+			<view class="cardItem" bindtap="navigateToOrder"  id='4'>
+				<view class="iconfont icon-sale-service"></view>
+				<text>售后</text>
+			</view>
+		</view>
+	</view>
+
+	<!--个人收货信息-->
+	<view class="deliveryCard">
+		<form catchsubmit="submitDeliveryInfo">
+			<view class="weui-cells__group weui-cells__group_form">
+				<view class="weui-cells__title" style="font-size:45rpx;margin:30rpx 0">收货信息</view>
+				<view class="weui-cells weui-cells_form">
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd"><label class="weui-label">姓名</label></view>
+						<view class="weui-cell__bd">
+							<input name='userName' class="weui-input" placeholder="填写本人姓名" placeholder-class="weui-input__placeholder" value='{{deliverInfo.userName}}' />
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd">
+							<label class="weui-label">电话</label>
+						</view>
+						<view class="weui-cell__hd">
+							<input name='phoneNumber' class="weui-input" placeholder="填写联系电话" placeholder-class="weui-input__placeholder" value='{{deliverInfo.phoneNumber}}' />
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__bd">收货地址</view>
+						<image class="location" src="../../images/location.png" bindtap="locateAddress"></image>
+					</view>
+					<view class="weui-cell ">
+						<view class="weui-cell__bd">
+							<textarea name='address' class="weui-textarea" placeholder="请填写收货地址" rows="3" value="{{deliverInfo.address}}" />
+							</view>
+		  		</view>
+						<view class="weui-form__tips-area">
+	          	<view class="weui-form__tips">		    
+	         	  </view>
+            </view>
+        	<view class="weui-form__opr-area">
+		       	<button class="weui-btn weui-btn_primary" formType="submit" >提交</button>
+          </view>
+				</view>				 
+	    </view>  
+		</form>
+	</view>
+
+</view>

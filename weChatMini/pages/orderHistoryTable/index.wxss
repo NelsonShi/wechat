@@ -1,0 +1,26 @@
+/**index.wxss**/
+.shopList{
+  display: flex;
+  height: 100%;
+}
+.table{
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx;
+  height: 100%;
+  width: 100%;
+}
+
+.tr{
+  display: flex;
+  width: 100%;
+  background-color: #30d8c2;
+  justify-content: space-between;
+}
+.th{
+  display: flex;
+  font-size: medium;
+  padding: 10rpx;
+  text-align: center;
+  color: gray;
+}

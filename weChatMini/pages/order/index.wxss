@@ -1,0 +1,5 @@
+.contianer{
+   background: red;
+   height: 400rpx;
+   width: 100%;
+}

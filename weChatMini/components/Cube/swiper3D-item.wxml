@@ -1,0 +1,6 @@
+<view wx:if="{{frontZ>0}}" class="side {{side}} my-class" style="height:{{height}};width:{{width}};transform:translateZ({{frontZ}}rpx)">
+  <slot></slot>
+</view>
+<view  wx:else class="side {{side}} my-class" style="height:{{height}};width:{{width}}">
+  <slot></slot>
+</view>

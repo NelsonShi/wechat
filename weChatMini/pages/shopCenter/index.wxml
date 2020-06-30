@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="page">
+	<!--顶部轮播图片-->
+	<view class="topShows">
+		<swiper indicator-dots="true" autoplay="true" interval="3000" duration="500">
+			<swiper-item>
+				<image class="shopTitieImage" src="../../images/shopTitlePics/1.png"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="shopTitieImage" src="../../images/shopTitlePics/2.png"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="shopTitieImage" src="../../images/shopTitlePics/1.png"></image>
+			</swiper-item>
+		</swiper>
+	</view>
+
+	<view class="shoppingList">
+		<view class="shopListTitle"><label class="weui-label">商品列表</label></view>
+		<view class="list">
+    <block wx:for="{{commodityList}}" wx:key="*this">
+       <view class="shopCard">
+         <image class="shopImage" src="../../images/goods/phone.png"></image>
+         <view class="shopCardText">
+            <label class="commodityName">iphone 6</label>
+            <label class="commodityPrice">3799 元</label>
+         </view>
+         <view class="shopAddButton">
+           <image class="shopAddButtonImage" src="../../images/add-to.png"> </image>        
+         </view>
+      </view>
+      </block>   
+		</view>
+	</view>
+</view>

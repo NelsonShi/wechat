@@ -1,0 +1,40 @@
+
+/*左*/
+
+.side.left {
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+/*右*/
+
+.side.right {
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+/*前*/
+
+.side.front {
+  z-index: 2;
+}
+
+.side.back {
+  z-index: 0;
+}
+
+
+
+/*上*/
+
+.side.top {
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+/*下*/
+
+.side.bottom {
+  transform: rotateX(90deg);
+  transform-origin: top; 
+}
