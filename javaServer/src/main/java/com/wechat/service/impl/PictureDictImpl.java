@@ -64,4 +64,13 @@ public class PictureDictImpl extends AbstractService<PictureDict> implements IPi
             return null;
         }
     }
+
+    @Override
+    public Boolean deletePic(PictureDict dict) {
+       pictureDictDao.delete(dict);
+       String realPath="D:\\Resource\\weChatMini\\images";
+       String filePath=realPath+"\\"+dict.getPath();
+       File file=new File(filePath);
+       if(file.exists()){return file.delete();}else {return true;}
+    }
 }

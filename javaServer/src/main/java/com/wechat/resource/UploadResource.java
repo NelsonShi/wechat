@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * Created by Nelson on 2020/6/29.
@@ -48,8 +47,27 @@ public class UploadResource extends BaseResource {
     }
 
     @RequestMapping(value = "/deletePic",method = RequestMethod.POST)
-    public Result DeletePic(@RequestBody PostDataVo vo){
+    public Result DeletePic(@RequestBody PostDataVo vo, HttpServletRequest request){
         Result result=new Result();
+        if(StringUtils.isEmpty(vo.getToken())){
+            result.setResultStatus(-1);
+            result.setMessage("Access needed");
+        }else {
+            try{
+                PictureDict dict=vo.ConvertDataToObject(PictureDict.class);
+                boolean deleted=pictureDictService.deletePic(dict);
+                if(deleted){
+                    result.setResultStatus(1);
+                    result.setData(true);
+                }else {
+                    result.setResultStatus(-1);
+                    result.setMessage("Error:delete file false");
+                }
+            }catch (Exception ex){
+                result.setResultStatus(-1);
+                result.setMessage("Error:exception "+ex.getMessage());
+            }
+        }
         return result;
     }
 }

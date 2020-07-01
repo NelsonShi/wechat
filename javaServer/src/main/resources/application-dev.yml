@@ -11,3 +11,7 @@ spring:
         ddl-auto: none
         show-sql: true
     database-platform: org.hibernate.dialect.SQLServerDialect
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB

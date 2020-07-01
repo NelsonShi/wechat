@@ -12,4 +12,5 @@ import java.util.List;
 public interface IPictureDict extends IService<PictureDict> {
     List<PictureDict> findPictures(String openId);
     PictureDict SavePic(MultipartFile file,String openId);
+    Boolean deletePic(PictureDict dict);
 }

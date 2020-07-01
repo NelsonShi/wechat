@@ -23,24 +23,24 @@
 
 
 	<view class="picDesigin">
-		<canvas class="holePage" canvas-id="cutImg">
-			<cover-view class="pageBox">
+		<canvas type='2d' class="holePage" id="cutImg" force-use-old-canvas="true">
+			<!-- <view class="pageBox">
 				<cover-view class="pageRow">
-					<cover-view class="pagePartAC borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none"></cover-view>
+					<cover-view class="borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none"></cover-view>
 				</cover-view>
 				<cover-view class="pageRow">
-					<cover-view class="pageBD borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-right:none"></cover-view>
-					<cover-view class="pageEF borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
-					<cover-view class="pageBD borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-left:none"></cover-view>
+					<cover-view class="borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-right:none"></cover-view>
+					<cover-view class="borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
+					<cover-view class="borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.height}}rpx;border-left:none"></cover-view>
 				</cover-view>
 				<cover-view class="pageRow">
-					<cover-view class="pagePartAC borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none;border-top:none">
+					<cover-view class="borderDashed" style="height:{{boxModule.height}}rpx;width:{{boxModule.length}}rpx;border-bottom:none;border-top:none">
 					</cover-view>
 				</cover-view>
 				<cover-view class="pageRow">
-					<cover-view class="pageEF borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
+					<cover-view class="borderDashed" style="height:{{boxModule.width}}rpx;width:{{boxModule.length}}rpx"></cover-view>
 				</cover-view>
-			</cover-view>
+			</view> -->
 		</canvas>
 
 	</view>
