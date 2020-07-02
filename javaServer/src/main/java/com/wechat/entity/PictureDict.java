@@ -12,8 +12,7 @@ import java.util.Date;
 @Table(name = "picdict")
 public class PictureDict {
     @Id
-    @GeneratedValue(generator="generator")
-    @GenericGenerator(name="generator", strategy = "native")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String id;
     private String openId;
     private String host;
