@@ -67,10 +67,13 @@ Page({
       //设置canvas 的实际像素值
       canvas.width=res[0].node._width;
       canvas.height=res[0].node._height;
+      this.setData({'picRealPixel':{width:res[0].node._width,height:res[0].node._height}})
       //设置canvas context的图片缩放比
       ctx.scale(1,1)
       that.setData({canvas,ctx})
-      that.drawPic('../../images/goods/phone.png')    
+      that.drawPic('../../images/goods/phone.png').then(function(){that.drawCutModule()}).catch((msg)=>{
+        console.log('画图失败',msg)
+      })
     }) 
   },
 
@@ -148,53 +151,33 @@ Page({
     var that=this
     var canvas=that.data.canvas
     var ctx=that.data.ctx
-    wx.getImageInfo({
-      src: path,
-      success:function(msg){
-        let image=canvas.createImage()
-        image.src=path
-        image.onload=()=>{
-          //将图片填充满canvas 图片实际长宽为 msg.width msg.height  drawImage的长宽和图片不一致时，会自动缩放
-          ctx.drawImage(image,0,0,canvas.width,canvas.height)
+    return new Promise(function (resolve, reject) {
+      wx.getImageInfo({
+        src: path,
+        success:(res)=>{
+          let image = canvas.createImage();          // 创建一个图片对象
+          image.src = path                      // 图片对象地址赋值
+          image.onload = () => {
+            //将图片填充满canvas 图片实际长宽为 res.width res.height  drawImage的长宽和图片不一致时，会自动缩放
+            ctx.drawImage(image,0,0,canvas.width,canvas.height)
+            resolve()
+          }
+        },
+        fail:(msg)=>{
+          reject(msg)
         }
-        that.drawCutModule()
-      },
-      fail:function(fail){
-        console.log('获取图片数据失败', fail)
-      }
+      })   
     })
-    // 获取UI holePage的真实长宽，记录下来剪切时使用（剪切时 使用的真实像素值）
-    // query.select('.holePage').boundingClientRect(function (rect) {
-    //   wx.getImageInfo({
-    //     src: path, //图片地址
-    //     success: function (msg) {
-    //       const canvas = wx.createCanvasContext('cutImg');
-    //       canvas.drawImage(path, 0, 0, rect.width, rect.height)
-    //       canvas.draw()
-    //       that.setData({
-    //         picRealPixel: {
-    //           width: rect.width,
-    //           height: rect.height
-    //         }
-    //       })
-    //     },
-    //     fail: function (msg) {
-    //       console.log('获取图片数据失败', msg)
-    //     }
-    //   })
-    // }).exec();
   },
 
   drawCutModule:function(){
-    var that=this
-    var ctx=that.data.ctx
-    console.log(ctx)
-    ctx.fillStyle = '#1aad19'
-    ctx.strokeStyle = 'rgba(1,1,1,0)'
-    ctx.moveTo(50,50)
-    ctx.lineTo(50,200)
-    ctx.fill()
-    ctx.stroke()
+     var that=this;
+     var context = that.data.ctx; 　
+     context.strokeStyle = "#ff0000";　
+     context.setLineDash([3, 3])
+     context.moveTo(50,50) 
+     context.lineTo(50,200) 
+     context.stroke();
   },
 
   cutPic: function () { // 通过button点击事件触发后面的函数
